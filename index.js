@@ -1,7 +1,8 @@
 /************************************************************** Task 1: Warm-up! **************************************************************/
 //Task a: declare a variable called votingAge, console log true if age > 18 (no function required)
 
-
+let votingAge = 21;
+console.log(votingAge > 18);
 
 
 
@@ -13,23 +14,28 @@
 
 //Task c: Convert string ("1999") to integer (1999)  (no function required) // hint look up the Number method
 
+console.log(Number("1999"));
 
 
 
 
 //Task d: Write a function to multiply a*b 
 
-
-
+function multi (a, b){
+    return a * b;
+}
+console.log(multi(2, 10));
 
 
 /************************************************************** Task 2 **************************************************************/
 //Age in Dog years
 //write a function that takes your age and returns it to you in dog years - they say that 1 human year is equal to seven dog years 
 
+function dogYears (age){
+    return age * 7;
+}
 
-
-
+console.log(dogYears(37));
 
 /************************************************************** Task 3 **************************************************************/
 //Dog feeder 
@@ -49,30 +55,77 @@
 
 // when you are finished invoke your function with the weight of 15 lbs and the age of 1 year - if your calculations are correct your result should be 0.44999999999999996
   
+function dogFeeder (pounds, age){
 
+    if (age < 1){
+        if (age === .166 && age < .325){
+            return pounds * .1;
+        }
+        else if (age === .333 &&  age < .582){
+            return pounds * .05;
+        }
+        else if (age === .583 && age < .999) {
+            return pounds * .04;
+        }
+        else{
+            return "Your puppy should not eat solid food."
+        }
+    }else if (age > 1) {
+        if (pounds <= 5.99 ){
+            return 0.05 * pounds;
+        }
+        else if (pounds > 5.99  && pounds <= 10.99){
+            return pounds * 0.04;
+        }
+        else if (pounds  > 11 && pounds <= 15.99){
+            return pounds * .03;
+        }
+        else{
+            return pounds * .02;
+        }
 
+    }else {
+        return "error"
+    }
+}
 
+console.log(dogFeeder(15, .300))
 
 /************************************************************** Task 4 **************************************************************/
-// Rock, Paper, Sissors
-// Your function should take a string (either rock paper or sissors)
+// Rock, Paper, Scissors
+// Your function should take a string (either rock paper or scissors)
 // it should return you won or you lost based on the rules of the game (you may need to look up the rules if you have not played before)
 // use math.random to determine the computers choice 
 // hint while you can complete this with only conditionals based on strings it may help to equate choice to a number 
 
-  
-  
+  function rps (yourChoice){
+      let compChoice =  Math.floor(Math.random() * Math.floor(3));
+
+      if (compChoice === 0){
+          return "Rock";
+      }
+
+  }
+//   console.log(rps());
 
 /************************************************************** Task 5 **************************************************************/
 //Metric Converter
 //a. KM to Miles - should take the number of kilometers and convert it to the equal number of miles
 
+  function convertToMiles (km){
+       let miles = km * 0.62137;
+      return `${miles} mi`
 
-
+  }
+  console.log(convertToMiles(12));
 
 
 //b. Feet to CM - should take the number of feet and convert it to the equal number of centimeters
-  
+    function convertToCentimeters (ft){
+        let centimeters = ft * 30.48;
+        return `${centimeters} cm`;
+    }
+    console.log(convertToCentimeters(5));
 
 
 
@@ -82,8 +135,12 @@
 // create a function called annoyingSong
 // the function should take a starting number as an argument and count down - at each iteration it should log (number) bottles of soda on the wall, (number) bottles of soda, take one down pass it around (number left over) bottles of soda on the wall`
   
-
-
+function annoyingSong () {
+    for (let i = 1; i <100; i++ ){
+        console.log(i);
+    }
+}
+annoyingSong();
 
 
 /************************************************************** Task 7 **************************************************************/
@@ -95,8 +152,27 @@
 //60s should be D 
 //and anything below 60 should be F
   
+function grade (gradePercentage){
+    if (gradePercentage > 89.9){
+        return "A";
+    }
+    else if (gradePercentage > 79.9){
+        return "B";
+    }
+    else if (gradePercentage > 69.9){
+        return "C";
+    }
+    else if (gradePercentage > 59.9){
+        return "D";
+    }
+    else if (gradePercentage < 60)
+        return "F";
+    else{
+        return "Please enter a grade percentage."
+    }
 
-  
+}
+  console.log(grade());
   
 
 /************************************************************** Stretch **************************************************************/
@@ -109,8 +185,8 @@
 
 
 /************************************************************** Stretch **************************************************************/
-//Take Rock, Paper, Sissors further
-//update your rock papers sissors code below to take a prompt from a user using the window object
+//Take Rock, Paper, Scissors further
+//update your rock papers scissors code below to take a prompt from a user using the window object
 
 
 
