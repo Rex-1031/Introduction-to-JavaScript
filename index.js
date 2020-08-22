@@ -140,7 +140,7 @@ function annoyingSong () {
         console.log(i);
     }
 }
-annoyingSong();
+// annoyingSong();
 
 
 /************************************************************** Task 7 **************************************************************/
@@ -172,7 +172,7 @@ function grade (gradePercentage){
     }
 
 }
-  console.log(grade());
+  console.log(grade(25));
   
 
 /************************************************************** Stretch **************************************************************/
@@ -180,7 +180,7 @@ function grade (gradePercentage){
 // Hint - you may need to study tomorrow's traning kit on arrays 
 // try looking up the .includes() method
 
-
+ 
 
 
 
