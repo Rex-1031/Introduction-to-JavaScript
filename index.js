@@ -8,7 +8,15 @@ console.log(votingAge > 18);
 
 //Task b: declare a variable and then use a conditional to change the value of that variable based on the value assigned to a second variable (no function required)
 
-
+let a = 100;
+let b = 50;
+if (a > b ){
+  a = a - b;
+}
+else{
+    a = a +b;
+}
+console.log(a);
 
 
 
@@ -57,8 +65,7 @@ console.log(dogYears(37));
   
 function dogFeeder (pounds, age){
 
-    if (age < 1){
-        if (age === .166 && age < .325){
+    if (age < .325){
             return pounds * .1;
         }
         else if (age === .333 &&  age < .582){
@@ -67,10 +74,8 @@ function dogFeeder (pounds, age){
         else if (age === .583 && age < .999) {
             return pounds * .04;
         }
-        else{
-            return "Your puppy should not eat solid food."
-        }
-    }else if (age > 1) {
+       
+        else if (age > 1) {
         if (pounds <= 5.99 ){
             return 0.05 * pounds;
         }
@@ -98,11 +103,16 @@ console.log(dogFeeder(15, .300))
 // use math.random to determine the computers choice 
 // hint while you can complete this with only conditionals based on strings it may help to equate choice to a number 
 
-  function rps (yourChoice){
+  function rps (myPick){
       let compChoice =  Math.floor(Math.random() * Math.floor(3));
 
       if (compChoice === 0){
-          return "Rock";
+          compChoice = "scissors";
+      }
+      else if (compChoice === 1){
+        compChoice = "paper";
+      }else {
+        compChoice = "rock";
       }
 
   }
@@ -135,12 +145,12 @@ console.log(dogFeeder(15, .300))
 // create a function called annoyingSong
 // the function should take a starting number as an argument and count down - at each iteration it should log (number) bottles of soda on the wall, (number) bottles of soda, take one down pass it around (number left over) bottles of soda on the wall`
   
-function annoyingSong () {
-    for (let i = 1; i <100; i++ ){
-        console.log(i);
+function annoyingSong (sodas) {
+    for (let i = sodas; i > 0; i-- ){ 
     }
+    return `${sodas} bottles of soda on the wall, ${sodas} bottles of soda, take one down pass it around, ${ (sodas -1)} bottles of soda on the wall...`
 }
-// annoyingSong();
+console.log(annoyingSong(99));
 
 
 /************************************************************** Task 7 **************************************************************/
