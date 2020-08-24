@@ -14,7 +14,7 @@ if (a > b ){
   a = a - b;
 }
 else{
-    a = a +b;
+    a = a + b;
 }
 console.log(a);
 
@@ -109,14 +109,47 @@ console.log(dogFeeder(15, .300))
       if (compChoice === 0){
           compChoice = "scissors";
       }
-      else if (compChoice === 1){
+        else if (compChoice === 1){
         compChoice = "paper";
-      }else {
+        }else {
         compChoice = "rock";
       }
 
+    
+
+     if (myPick === "scissors" && compChoice === "rock"){
+          return `You: ${myPick} v. Computer: rock. You Lose!`;
+      } 
+      
+      else if (myPick === "scissors" && compChoice === "paper"){
+          return `You: ${myPick} v. Computer: paper.  You Win!`;
+      }
+
+      else if (myPick === "rock" && compChoice === "paper"){
+            return `You: ${myPick} v. Computer: paper. You Lose!`;
+      }
+
+      else if (myPick === "rock" && compChoice === "scissors"){
+          return `You: ${myPick} v. Computer: scissors. You Win!`;
+      }
+
+      else if (myPick === "paper" && compChoice === "scissors"){
+          return `You: ${myPick} v. Computer: scissors. You Lose!`;   
+      }
+      else if (myPick === "paper" && compChoice === "rock"){
+          return `You: ${myPick} v. Computer: rock.  You Win!`;
+      }
+      else if (myPick === compChoice){
+          return  `You: ${myPick}  v.  Computer: ${compChoice}. Tie!`;
+      }
+      else{
+          return "Please write: rock, paper, or scissors."
+      }
+
+
+
   }
-//   console.log(rps());
+  console.log(rps("rock"));
 
 /************************************************************** Task 5 **************************************************************/
 //Metric Converter
@@ -145,12 +178,12 @@ console.log(dogFeeder(15, .300))
 // create a function called annoyingSong
 // the function should take a starting number as an argument and count down - at each iteration it should log (number) bottles of soda on the wall, (number) bottles of soda, take one down pass it around (number left over) bottles of soda on the wall`
   
-function annoyingSong (sodas) {
-    for (let i = sodas; i > 0; i-- ){ 
+function annoyingSong () {
+    for (let i = 99; i > 0; i-- ){ 
+        console.log(`${i} bottles of soda on the wall, ${i} bottles of soda, take one down pass it around, ${i -1} bottles of soda on the wall...`);  
     }
-    return `${sodas} bottles of soda on the wall, ${sodas} bottles of soda, take one down pass it around, ${ (sodas -1)} bottles of soda on the wall...`
 }
-console.log(annoyingSong(99));
+    annoyingSong();
 
 
 /************************************************************** Task 7 **************************************************************/
@@ -182,7 +215,7 @@ function grade (gradePercentage){
     }
 
 }
-  console.log(grade(25));
+  console.log(grade());
   
 
 /************************************************************** Stretch **************************************************************/
