@@ -225,7 +225,23 @@ function grade (gradePercentage){
 // Hint - you may need to study tomorrow's traning kit on arrays 
 // try looking up the .includes() method
 
-    
+function vowelCount(str){
+    let count = 0;
+    for(let i = 0; i < str.length; i++){
+      let vowel = str[i];
+      if ( vowel ==="a"|| vowel === "e"|| vowel === "i"|| vowel === "o"|| vowel === "u"|| vowel === "A"|| vowel ==="E"|| vowel === "I"|| vowel === "O"|| vowel === "U"){
+        count +=1
+      }
+    }
+    return count;
+  }
+  console.log(vowelCount("The QUICK BROWN fox"));
+
+
+
+
+
+
 
 /************************************************************** Stretch **************************************************************/
 //Take Rock, Paper, Scissors further
