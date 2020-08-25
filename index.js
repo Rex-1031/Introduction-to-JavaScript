@@ -65,36 +65,38 @@ console.log(dogYears(37));
   
 function dogFeeder (pounds, age){
 
-    if (age < .325){
+    if (age <= .332){
             return pounds * .1;
         }
-        else if (age === .333 &&  age < .582){
+
+    else if (age <= .582){
             return pounds * .05;
         }
-        else if (age === .583 && age < .999) {
+
+    else if (age <= .999) {
             return pounds * .04;
         }
        
-        else if (age > 1) {
-        if (pounds <= 5.99 ){
+    else if (age >= 1 && pounds <= 5.99){
             return 0.05 * pounds;
         }
-        else if (pounds > 5.99  && pounds <= 10.99){
+
+    else if (age >= 1 && pounds <= 10.99){
             return pounds * 0.04;
         }
-        else if (pounds  > 11 && pounds <= 15.99){
+
+    else if (age >= 1 && pounds <= 15.99){
             return pounds * .03;
         }
-        else{
+    else if (age >= 1 && pounds > 15){
             return pounds * .02;
-        }
-
+        
     }else {
-        return "error"
+        return "Please enter dog age (months in decimals) and weight"
     }
 }
 
-console.log(dogFeeder(15, .300))
+console.log(dogFeeder(15, 1))
 
 /************************************************************** Task 4 **************************************************************/
 // Rock, Paper, Scissors
@@ -178,12 +180,12 @@ console.log(dogFeeder(15, .300))
 // create a function called annoyingSong
 // the function should take a starting number as an argument and count down - at each iteration it should log (number) bottles of soda on the wall, (number) bottles of soda, take one down pass it around (number left over) bottles of soda on the wall`
   
-function annoyingSong () {
-    for (let i = 99; i > 0; i-- ){ 
+function annoyingSong (num) {
+    for (let i = num; i > 0; i-- ){ 
         console.log(`${i} bottles of soda on the wall, ${i} bottles of soda, take one down pass it around, ${i -1} bottles of soda on the wall...`);  
     }
 }
-    annoyingSong();
+    annoyingSong(5);
 
 
 /************************************************************** Task 7 **************************************************************/
@@ -223,9 +225,7 @@ function grade (gradePercentage){
 // Hint - you may need to study tomorrow's traning kit on arrays 
 // try looking up the .includes() method
 
- 
-
-
+    
 
 /************************************************************** Stretch **************************************************************/
 //Take Rock, Paper, Scissors further
